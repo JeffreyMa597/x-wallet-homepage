@@ -10,26 +10,36 @@
     align-items: center;
   }
   .title {
-    font-size: 32px;
-    font-weight: bold;
-    font-family: inter;
-    margin-top: 60px;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -3.84px;
   }
 
   .desc {
-    width: 400px;
-    color: #888888;
+    color: #adadad;
     text-align: center;
+    font-family: Baghdad;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     margin: 30px;
+    max-width: 600px;
   }
   .downloadWrap {
     text-align: center;
     .downloadBtn {
-      background-color: #222222;
-      padding: 8px 20px;
-      border-radius: 4px;
       color: #fff;
-      font-size: 14px;
+      text-align: center;
+      font-size: 28px;
+      border-radius: 5px;
+      background: #2a2a2a;
+      width: 178px;
+      height: 65px;
+      line-height: 65px;
     }
   }
   .createWrap {
@@ -41,7 +51,16 @@
 @media screen and (max-width: 1200px) {
   .contentWrap {
     .desc {
-      width: 500px;
+      max-width: 500px;
+    }
+
+    .downloadWrap {
+      .downloadBtn {
+        font-size: 20px;
+        width: 119px;
+        height: 50px;
+        line-height: 50px;
+      }
     }
   }
 }
@@ -49,6 +68,11 @@
   .contentWrap {
     .createWrap {
       height: 730px;
+      font-size: 20px;
+    }
+    .desc {
+      min-width: 342px;
+      font-size: 18px;
     }
   }
 }
