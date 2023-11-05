@@ -1,8 +1,17 @@
 .headerWrap {
   display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
-  line-height: 64px;
-  height: 64px;
+  justify-content: center;
   border-bottom: 1px solid #e5e5e5;
+  padding: 0 22px;
+  .headerBox {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .mediaWrap {
+    display: flex;
+    gap: 22px;
+  }
 }

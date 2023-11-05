@@ -1,8 +1,13 @@
 .contentWrap {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
   .bannerWrap {
     width: 100%;
-    padding: 30px;
+    max-width: 1200px;
+    padding: 0 70px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -16,6 +21,8 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: -3.84px;
+    padding: 45px 76px;
+    text-align: center;
   }
 
   .desc {
@@ -26,11 +33,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 30px;
+
     max-width: 600px;
+    padding: 45px 0;
   }
   .downloadWrap {
     text-align: center;
+    padding-bottom: 70px;
     .downloadBtn {
       color: #fff;
       text-align: center;
@@ -44,11 +53,109 @@
   }
   .createWrap {
     height: 510px;
-    background-color: #e3e3e3;
+    background-color: #e2e3e3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .createBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 144px;
+      height: 100%;
+      max-width: 1200px;
+      width: 100%;
+      box-sizing: border-box;
+      .leftPart {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        .mainTitle {
+          color: #000;
+          font-family: Inter;
+          font-size: 64px;
+          font-weight: 800;
+        }
+        .subTitle {
+          color: #adadad;
+          font-family: Baghdad;
+          font-size: 24px;
+          padding: 22px 0;
+        }
+        .createInputWrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .createInput {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #fff;
+            margin-left: 28px;
+
+            & input {
+              border: none; /* 去掉边框 */
+              outline: none; /* 去掉轮廓 */
+              background-color: none; /* 去掉背景颜色 */
+              padding: 0; /* 去掉内边距 */
+              margin: 0; /* 去掉外边距 */
+              box-shadow: none; /* 去掉阴影 */
+              font: inherit; /* 继承字体样式 */
+              color: inherit; /* 继承文字颜色 */
+              cursor: text; /* 设置光标样式为文本 */
+              height: 40px;
+              border-radius: 10px;
+            }
+            .rightArrowWrap {
+              width: 50px;
+              height: 40px;
+              border-radius: 10px;
+              background: #ababad;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .rightPart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .partnerWrap {
+    text-align: center;
+
+    .partnerTitle {
+      color: #000;
+      font-family: Inter;
+      font-size: 64px;
+      font-weight: 800;
+      margin-top: 42px;
+    }
+    .iconsBox {
+      display: flex;
+      gap: 68px;
+      justify-content: center;
+      align-items: center;
+      margin: 42px 0;
+    }
+    .partnerItem {
+    }
+  }
+  .footer {
+    width: 100%;
+    height: 100px;
+    background-color: #000;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .contentWrap {
     .desc {
       max-width: 500px;
@@ -64,15 +171,130 @@
     }
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) {
   .contentWrap {
+    .title {
+      padding: 55px 76px;
+    }
+    .bannerWrap {
+      padding: 0 50px;
+    }
+
+    .downloadWrap {
+      padding-top: 30px;
+    }
+    .createWrap {
+      .createBox {
+        padding: 0 90px;
+      }
+      .subTitle {
+        max-width: 280px;
+      }
+      .createInputWrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        .xlogo {
+          width: 126px;
+          height: 36px;
+        }
+        .createInput {
+          margin-left: 0 !important;
+          margin-top: 16px;
+        }
+      }
+    }
+    .partnerWrap {
+      .partnerTitle {
+        font-size: 60px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .contentWrap {
+    .title {
+      min-width: 270px;
+      padding: 28px 42px 42px 42px;
+      font-size: 32px;
+      letter-spacing: -2.56px;
+    }
+    .bannerWrap {
+      padding: 0 18px;
+    }
+
     .createWrap {
       height: 730px;
       font-size: 20px;
     }
     .desc {
-      min-width: 342px;
+      width: 342px;
       font-size: 18px;
+      padding: 42px 24px;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+
+    .downloadWrap {
+      .downloadBtn {
+        width: 119px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+      }
+    }
+
+    .createWrap {
+      height: 770px;
+      .createBox {
+        flex-direction: column;
+        justify-content: unset;
+
+        .leftPart {
+          order: 1;
+          .mainTitle {
+            font-size: 48px;
+          }
+          .subTitle {
+            max-width: 200px;
+            font-size: 20px;
+            padding: 10px 0;
+          }
+          .createInputWrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center !important;
+            align-items: flex-start !important;
+            .xlogo {
+              width: 126px;
+              height: 36px;
+            }
+            .createInput {
+              margin-left: 0 !important;
+              margin-top: 16px;
+            }
+          }
+        }
+        .rightPart {
+          order: 0;
+          padding: 63px 0 55px 0;
+        }
+      }
+    }
+
+    .partnerWrap {
+      .partnerTitle {
+        font-size: 32px;
+      }
+      .iconsBox {
+        gap: 50px;
+        margin: 18px 0;
+        & img {
+          width: 25px;
+          height: 25px;
+        }
+      }
     }
   }
 }
