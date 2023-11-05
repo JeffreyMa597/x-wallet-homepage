@@ -99,7 +99,6 @@
               border: none; /* 去掉边框 */
               outline: none; /* 去掉轮廓 */
               background-color: none; /* 去掉背景颜色 */
-              padding: 0; /* 去掉内边距 */
               margin: 0; /* 去掉外边距 */
               box-shadow: none; /* 去掉阴影 */
               font: inherit; /* 继承字体样式 */
@@ -107,6 +106,8 @@
               cursor: text; /* 设置光标样式为文本 */
               height: 40px;
               border-radius: 10px;
+              padding: 0 15px;
+              caret-color: rgba($color: #000000, $alpha: 0.3);
             }
             .rightArrowWrap {
               width: 50px;
