@@ -40,6 +40,7 @@
   .downloadWrap {
     text-align: center;
     padding-bottom: 70px;
+
     .downloadBtn {
       color: #fff;
       text-align: center;
@@ -49,6 +50,10 @@
       width: 178px;
       height: 65px;
       line-height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
   }
   .createWrap {

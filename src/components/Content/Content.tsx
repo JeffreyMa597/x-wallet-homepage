@@ -33,6 +33,41 @@ export default function Content() {
     },
   ];
 
+  function downloadFile(url: string, fileName: string) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const blob = new Blob([xhr.response], { type: 'application/octet-stream' });
+        const url = URL.createObjectURL(blob);
+        const element = document.createElement('a');
+        element.href = url;
+        element.download = fileName;
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
+    };
+
+    xhr.send();
+  }
+
+  const handleDownload = () => {
+    const owner = 'accountjs';
+    const repo = 'x-wallet';
+    const path = 'xwallet.zip';
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const downloadUrl = data.download_url;
+        downloadFile(downloadUrl, 'xwallet.zip');
+      });
+  };
+
   return (
     <div className={styles.contentWrap}>
       <div className={styles.title}>Onboarding Twitter User to AA Web3 Wallet</div>
@@ -44,7 +79,9 @@ export default function Content() {
           receive, and showcase NFTs and tokens, enriching your social interactions.
         </div>
         <div className={styles.downloadWrap}>
-          <div className={styles.downloadBtn}>Download</div>
+          <button className={styles.downloadBtn} onClick={handleDownload}>
+            Download
+          </button>
         </div>
       </div>
 
